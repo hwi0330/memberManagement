@@ -1,0 +1,194 @@
+@charset "EUC-KR";
+
+
+* { /* 페이지의 padding, margin이 자유롭게 수정되게끔 */
+	padding:0;
+	margin:0;	
+}
+
+html, body {
+    width:100%;
+    height:100%;
+}
+
+a { /* 글씨 밑 선 제거 */
+	text-decoration:none;
+}
+
+
+ul, li { /* ul, li의 점 제거 */
+	list-style:none;
+}
+
+
+table { /* 간격 조절 */
+	border-collapse:collapse;
+	border-spacing:0;
+}
+
+
+/* 초기 화면 */
+.header {
+	background:#2828ff;
+	color:#ffffff;
+	line-height:80px;
+	text-align:center;
+	/* margin:-20px; */
+}
+
+.nav {
+	background:#b5b5ff;
+	color:#ffffff;
+	list-style:none;
+	margin:0;
+}
+
+.nav ul {
+	display:inline-block;
+}
+
+.nav li {
+	float:left;
+}
+
+.nav a { 
+	display:block;
+	padding:0 40px;
+	color:#fff;
+	font-size:17px;
+	transition:0.3s;
+}
+
+.index {
+	background:#e5e5e5;	
+	width:100%;
+    height:100%;
+}
+
+.section {
+	padding:20px;	
+}
+
+.section h3 {
+	text-align:center;
+	padding-bottom:20px;
+}
+
+
+.footer {
+	/* 그라데이션 */
+	background:linear-gradient(to left, #50bcdf, #6868ff);
+	color:#ffffff;
+	line-height:40px;
+	text-align:center;
+	/* footer를 맨 아래로 */
+	position:fixed; 
+	bottom:0; 
+	width:100%;
+
+	
+}
+
+.center {
+	text-align:center;
+}
+
+
+/* 회원 등록 */
+.join {
+}
+
+.join h2 {
+	text-align:center;
+	padding:20px;
+}
+
+.jointable {
+	border-style:double; 
+	margin-right:auto;
+	margin-left:auto; /* 가운데 정렬 */	
+}
+
+.jointable tr {
+	border-style:double;
+
+}
+
+.jointable td {
+	border-style:double;
+	text-align:center;
+	width:250px;
+}
+
+.jointable td:nth-of-type(2) { /* 두번째 td 일괄 선택 */
+	border-style:double;
+	text-align:left;
+}
+
+/* textarea의 길이, 텍스트창의 위치 설정 */
+#textarea-width1 {
+	width:150px;
+}
+
+#textarea-width2 {
+	align:left;
+	width:200px;
+}
+
+#textarea-width3 {
+	align:left;
+	width:300px;
+}
+
+
+/* 회원 목록 */
+.joinlist {
+	text-align:center;
+}
+
+.joinlist h2 {
+	text-align:center;
+	padding:20px;
+}
+
+.joinlisttable{
+	border-style:double; 
+	margin-right:auto; 
+	margin-left:auto; /* right, left 둘다 적어서 가운데 정렬 */	
+}
+
+.joinlisttable td {
+	border-style:double;
+	text-align:center;
+	width:15%;
+}
+
+
+/* 회원 매출 조회 */
+.sales {
+	text-align:center;
+	margin-right:auto;
+	margin-left:auto; /* 가운데 정렬 */	
+}
+
+.sales h2 {
+	text-align:center;
+	padding:20px;
+}
+
+.salestable {
+	border-style:double; 
+	margin-right:auto;
+	margin-left:auto; /* right, left 둘다 적어서 가운데 정렬 */	
+}
+
+.salestable td {
+	border-style:double;
+	text-align:center;
+	width:100px;
+}
+
+
+
+
+
