@@ -429,7 +429,6 @@ public class MemberDAO {
 			System.out.println(num);
 			pstmt.setInt(1, Integer.parseInt(num));		
 			
-
 			int count = pstmt.executeUpdate();;
 			
 			if(count > 0) {
@@ -453,5 +452,66 @@ public class MemberDAO {
 
 		return "joinSelectAll.me";
 	}
+	
+	// 회원 정보 체크 삭제 (2021.11.02)
+	public String multiDelete(HttpServletRequest request, HttpServletResponse response) {
+		try {
+			int res = 0;
+			int[] cnt = null;
+			
+			// "java.sql.SQLException: 자동 커밋이 설정된 채 커밋할 수 없습니다." 오류 제거
+			con.setAutoCommit(false);
+			
+			String[] num = request.getParameterValues("rowCheck"); // 체크박스에서 체크한 파라미터(name)를 가쟈옴
+			System.out.println(num.length);
+			
+			String sql = "delete from member_tbl_02 where CUSTNO = ?";
+					
+			pstmt = con.prepareStatement(sql);
+			
+			for(int i=0; i<num.length; i++) {
+				System.out.println(num);
+				pstmt.setString(1, num[i]);
+				
+				// 쿼리문 pstmt에 모두 쌓아 한번에 처리
+				pstmt.addBatch();
+			}
+			
+			cnt = pstmt.executeBatch();
+			
+			// 쿼리 성공 : -2
+			for(int i=0; i<cnt.length; i++) {
+				if(cnt[i] == -2) {
+					System.out.println("체크 삭제 성공");
+					res++;
+				}
+			}
+			
+			// 모아둔 쿼리 실행 끝나면 커밋
+			if(num.length == res) {
+				con.commit();
+			}
+			else {
+				con.rollback();
+			}
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			try {
+				if (rs != null)
+					rs.close();
+				if (pstmt != null)
+					pstmt.close();
+				if (con != null)
+					con.close();
+			} catch (Exception e) {
+					e.printStackTrace();
+			}
+		}
+
+		return "joinSelectAll.me";
+	}
+	
 
 }

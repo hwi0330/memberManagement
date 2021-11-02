@@ -61,7 +61,7 @@
 			alert(<%=member.getCustno() %> + '님의 정보가 삭제되었습니다.');
 			location.href = "memberDelete.me?custno=" + <%=member.getCustno() %>
 		}
-		return false;				
+		return false; // 취소 클릭 시 창닫음			
 	}
 
 </script>
@@ -73,7 +73,7 @@
         <form name="join" action="updateAction.me" method="post">
             <table class="jointable">
 				<tr>
-					<td>회원번호(자동발생)</td>
+					<td>회원번호</td>
 					<td><input type="text" id="textarea-width1" name="custno" value="<%=member.getCustno()%>"></td>
 				</tr>
 				<tr>

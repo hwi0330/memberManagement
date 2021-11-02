@@ -163,6 +163,10 @@ table { /* 간격 조절 */
 	width:15%;
 }
 
+#check {
+	width:50px;
+}
+
 
 /* 회원 매출 조회 */
 .sales {

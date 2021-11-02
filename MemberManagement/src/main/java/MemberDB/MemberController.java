@@ -84,6 +84,12 @@ public class MemberController extends HttpServlet {
 		sit = member.memberDelete(request, response);
 
 	}
+	
+	// 회원 정보 체크 삭제
+	else if(command.equals("/multiDelete.me")) {
+		sit = member.multiDelete(request, response);
+
+	}
 		
 	// 결과 수행
 	RequestDispatcher dispatcher = request.getRequestDispatcher(sit);

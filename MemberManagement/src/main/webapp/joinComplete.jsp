@@ -7,9 +7,10 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>회원번호 생성</title>
+<title>회원가입 완료</title>
 </head>
 <body>
+    <!-- 회원목록 창으로 -->
     <% response.sendRedirect("joinSelectAll.me"); %>
 </body>
 </html>
